@@ -14,7 +14,7 @@ document.getElementById('caseDecrease').addEventListener('click', function() {
   handleCaseChange(false);
 })
 
-
+// for phone increase and decrease button
 function handlePhoneChange(isIncrease) {
   const phoneInput = document.getElementById('phoneCount');
   const phoneCount = parseInt(phoneInput.value);
@@ -26,11 +26,12 @@ function handlePhoneChange(isIncrease) {
     phoneNewCount = phoneCount - 1
   }
   phoneInput.value = phoneNewCount;
-  const phoneTotal = (phoneNewCount * 200.20).toFixed(2);
+  const phoneTotal = parseFloat((phoneNewCount * 200.20).toFixed(2));
   document.getElementById('phoneTotal').innerText = phoneTotal;
   calculateTotal()
 }
 
+// for case increase and decrease button
 function handleCaseChange(isIncrease) {
   const caseInput = document.getElementById('caseCount');
   const caseCount = parseInt(caseInput.value);
@@ -42,7 +43,7 @@ function handleCaseChange(isIncrease) {
     caseNewCount = caseCount - 1
   }
   caseInput.value = caseNewCount;
-  const caseTotal = (caseNewCount * 50.25).toFixed(2);
+  const caseTotal = parseFloat((caseNewCount * 50.25).toFixed(2));
   document.getElementById('caseTotal').innerText = caseTotal;
   calculateTotal()
 }
